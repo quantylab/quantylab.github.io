@@ -1,0 +1,12 @@
+.highlight {
+    background-color: #f8f8f8 !important;
+}
+
+div.highlight pre {
+    border: 0px;
+    padding: 8px;
+}
+
+.navbar-toggler {
+    border: none;
+}

@@ -10,25 +10,4 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <priority>0.6</priority>
 </url>
 
-<url>
-<loc>http://blog.quantylab.com/archives.html</loc>
-<lastmod>2020-05-05T13:32:54-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.6</priority>
-</url>
-
-<url>
-<loc>http://blog.quantylab.com/tags.html</loc>
-<lastmod>2020-05-05T13:32:54-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.6</priority>
-</url>
-
-<url>
-<loc>http://blog.quantylab.com/categories.html</loc>
-<lastmod>2020-05-05T13:32:54-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.6</priority>
-</url>
-
 </urlset>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2026-06-12" />
+  <meta name="description" content="2026년 6월 12일 기준 최신 데이터를 바탕으로 NAVER의 기본적 분석, 기술적 분석, 수급 분석, 국민연금 보유 추이, 신용거래, OBV까지 반영해 투자 의견을 정리합니다." />
+  <title>NAVER(035420) 분석: 6월 급등 이후에도 매수 의견을 유지하는 이유</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  /* Technical Book Style — inspired by O'Reilly / Manning */
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --text: #1a1a1a;
+    --text-light: #555;
+    --heading: #222;
+    --accent: #c0392b;
+    --link: #2471a3;
+    --bg: #fff;
+    --bg-code: #f7f7f7;
+    --border: #ddd;
+    --border-light: #e8e8e8;
+    --table-header: #f0f0f0;
+    --table-stripe: #fafafa;
+    --tip-bg: #eaf4e8;
+    --tip-border: #5daa3e;
+    --warn-bg: #fef9e7;
+    --warn-border: #f0c40f;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 40px auto;
+    padding: 0 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Headings ── */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--heading);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    margin-top: 0;
+  }
+
+  /* ── Chapter number (title) + subtitle ── */
+  h1.title {
+    font-size: 1.2em;
+    color: var(--accent);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0.1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  p.subtitle {
+    font-family: 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--heading);
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.3em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 1.45em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    color: var(--accent);
+  }
+
+  h4 { font-size: 1.1em; }
+
+  /* ── Paragraphs ── */
+  p {
+    margin: 0 0 1em;
+    text-align: justify;
+    word-break: keep-all;
+  }
+
+  /* ── Links ── */
+  a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  a:hover { border-bottom-color: var(--link); }
+
+  /* ── Lists ── */
+  ul, ol {
+    margin: 0 0 1em;
+    padding-left: 1.6em;
+  }
+  li { margin-bottom: 0.35em; }
+  li > p { margin-bottom: 0.25em; }
+
+  /* ── Bold / Strong ── */
+  strong {
+    font-weight: 700;
+    color: var(--heading);
+  }
+
+  /* ── Inline code ── */
+  code {
+    font-family: 'JetBrains Mono', 'Consolas', 'Menlo', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+
+  /* ── Code blocks ── */
+  pre {
+    font-family: 'JetBrains Mono', 'Consolas', 'Menlo', monospace;
+    font-size: 0.85em;
+    line-height: 1.55;
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 1.2em 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  /* ── Tables ── */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.2em 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.92em;
+    line-height: 1.5;
+  }
+  thead {
+    border-bottom: 2px solid var(--heading);
+  }
+  th {
+    background: var(--table-header);
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) {
+    background: var(--table-stripe);
+  }
+  tbody tr:hover {
+    background: #f0f4ff;
+  }
+
+  /* ── Blockquotes ── */
+  blockquote {
+    margin: 1.2em 0;
+    padding: 12px 20px;
+    border-left: 4px solid var(--accent);
+    background: #fdf6f6;
+    color: var(--text-light);
+    font-style: italic;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+
+  /* ── Horizontal rule ── */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2em 0;
+  }
+
+  /* ── Images ── */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.2em auto;
+    border-radius: 4px;
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { max-width: 100%; margin: 0; padding: 20px; font-size: 11pt; }
+    pre { border-left-color: #999; }
+    a { color: var(--text); border-bottom: none; }
+    h1, h2, h3 { page-break-after: avoid; }
+    pre, table, blockquote { page-break-inside: avoid; }
+  }
+
+  img{max-width:100%;height:auto;}
+  body{font-family:"Noto Sans CJK KR","Noto Sans KR",sans-serif;}
+
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">NAVER(035420) 분석: 6월 급등 이후에도 매수 의견을
+유지하는 이유</h1>
+<p class="date">2026-06-12</p>
+</header>
+<p>안녕하세요, 퀀티랩입니다.</p>
+<p>이번 글은 <strong>NAVER(035420)</strong> 를
+<code>2026년 6월 12일</code> 기준 최신 데이터로 다시 점검한 종목
+분석입니다. 결론부터 말씀드리면, NAVER는 단기 변동성이 큰 구간이지만
+<strong>의견은 <code>매수</code></strong> 입니다. 다만 한 번에 강하게
+추격하기보다 <strong>분할 매수형 매수 의견</strong>이 더 적절합니다.</p>
+<h2 id="한-줄-결론">한 줄 결론</h2>
+<p>NAVER는 <strong>매수</strong>로 봅니다. 이유는 단순합니다.
+<strong>재무가 받쳐 주는 상태에서, 기술적 흐름이 다시 살아나고 있고, 6월
+12일에는 외국인·기관 수급까지 동시에 들어왔기 때문</strong>입니다.</p>
+<h2 id="기준일-핵심-데이터">기준일 핵심 데이터</h2>
+<p><code>2026-06-12</code> 기준 NAVER의 실제 데이터는 다음과
+같습니다.</p>
+<ul>
+<li>종가: <strong>247,000원</strong></li>
+<li>전일 대비 등락률: <strong>+10.27%</strong></li>
+<li>거래량: <strong>5,215,884주</strong></li>
+<li>거래대금: <strong>1,301,636백만 원</strong></li>
+<li>PER: <strong>18.99배</strong></li>
+<li>PBR: <strong>1.34배</strong></li>
+<li>ROE: <strong>7.06%</strong></li>
+<li>배당수익률: <strong>1.06%</strong></li>
+<li>공매도 비율: <strong>3.83%</strong></li>
+<li>프로그램 순매수 누적: <strong>1,188,514주</strong></li>
+<li>개인/외국인/기관 순매수: <strong>-1,381,414주 / +651,931주 /
++750,508주</strong></li>
+<li>연기금 순매수: <strong>+175,274주</strong></li>
+</ul>
+<p>이 숫자만 봐도 6월 12일 하루는 단순 반등이 아니라 <strong>강한 수급이
+붙은 반전 시도</strong>에 가까웠습니다.</p>
+<h2 id="ai-뉴스-요약">1. AI 뉴스 요약</h2>
+<p><code>2026-06-12</code> 기준 AI 종목 뉴스 요약에서 NAVER의 핵심
+키워드는 다음이었습니다.</p>
+<ul>
+<li>주가 급등</li>
+<li>치지직 플랫폼 성장 가속화</li>
+<li>월드컵 중계 흥행</li>
+<li>크래프톤과의 e스포츠 확장 협업</li>
+</ul>
+<p>여기에 <code>2026-06-11</code> 뉴스 흐름까지 연결하면, 시장은 NAVER를
+단순 검색·광고주가 아니라 <strong>AI 인프라, 클라우드, 콘텐츠 플랫폼
+확장주</strong>로 다시 보기 시작했습니다. 즉 최근 주가 반응은 단순한
+테마성 급등이라기보다, <strong>AI 팩토리 기대 + 콘텐츠 트래픽 모멘텀 +
+기관/외국인 수급 유입</strong>이 겹친 결과로 해석하는 편이 맞습니다.</p>
+<h2 id="최근-뉴스-분석">2. 최근 뉴스 분석</h2>
+<p>최근 뉴스는 단순히 “호재가 많다” 수준이 아니라, NAVER의 투자 논리를
+세 갈래로 강화하고 있습니다.</p>
+<h3 id="ai-팩토리-뉴스는-밸류에이션-재평가-논리입니다">1) AI 팩토리
+뉴스는 밸류에이션 재평가 논리입니다</h3>
+<p><code>2026-06-13</code>과 <code>2026-06-11</code> 뉴스의 핵심은
+<strong>엔비디아 협력 기반 AI 팩토리</strong>입니다. 이것이 중요한
+이유는 단순한 기술 협업 뉴스가 아니라, NAVER가 앞으로 어떤 회사로
+평가받을지를 바꾸는 이야기이기 때문입니다.</p>
+<ul>
+<li>시장은 NAVER를 검색·광고 플랫폼에서 <strong>AI 인프라와 AI 서비스
+운영 역량을 가진 기업</strong>으로 다시 보기 시작했습니다.</li>
+<li>특히 <code>2030년 연간 약 20조 원 신규 매출 목표</code> 같은 숫자는
+아직 확정 실적이 아니라 기대치이지만, 시장이 붙이는 멀티플에는 영향을 줄
+수 있습니다.</li>
+<li>다만 동시에 <code>75조~90조 원</code> 규모의 인프라 투자 부담 이슈도
+함께 나왔기 때문에, 이 뉴스는 <strong>강한 성장 재료이면서도 자금 조달
+리스크를 동반하는 뉴스</strong>입니다.</li>
+</ul>
+<p>즉 이 구간의 뉴스는 단기 실적 개선 뉴스라기보다 <strong>“NAVER를 더
+비싸게 평가할 수 있는가”를 시험하는 뉴스</strong>입니다.</p>
+<h3 id="치지직-뉴스는-실제-트래픽과-플랫폼-체력을-보여-줍니다">2) 치지직
+뉴스는 실제 트래픽과 플랫폼 체력을 보여 줍니다</h3>
+<p><code>2026-06-12</code> 뉴스에서 가장 실질적인 부분은 <strong>치지직
+동시 접속자 482만 명</strong>입니다.</p>
+<ul>
+<li>AI 팩토리 뉴스가 기대라면, 치지직 뉴스는 <strong>실제 사용자
+지표</strong>입니다.</li>
+<li>월드컵 중계 흥행은 NAVER가 여전히 대규모 트래픽을 흡수하고
+체류시간을 늘릴 수 있는 플랫폼이라는 점을 보여 줍니다.</li>
+<li>크래프톤과의 협업도 단순 이벤트가 아니라, 향후 e스포츠와 스트리밍
+생태계 확장 가능성을 열어 둡니다.</li>
+</ul>
+<p>이 뉴스가 좋은 이유는 “꿈”보다 “현재 플랫폼의 힘”을 보여 주기
+때문입니다. NAVER 투자에서 이런 종류의 뉴스는 밸류에이션보다
+<strong>사업 지속성과 플랫폼 확장성</strong>을 강화합니다.</p>
+<h3
+id="최근-뉴스-흐름은-호재-일변도가-아니라-변동성도-함께-말해-줍니다">3)
+최근 뉴스 흐름은 호재 일변도가 아니라 변동성도 함께 말해 줍니다</h3>
+<p><code>2026-06-09</code>와 <code>2026-06-10</code> 뉴스는 오히려 경계
+신호도 담고 있습니다.</p>
+<ul>
+<li>젠슨 황 테마 기대가 빠질 때 주가가 급락했고</li>
+<li>엔비디아 협력 뉴스가 나와도 하루 변동성이 매우 컸으며</li>
+<li>일부 호재는 공시 확정 실적보다 <strong>기대 선반영</strong> 성격이
+강했습니다</li>
+</ul>
+<p>이 부분이 중요합니다. 지금 NAVER는 뉴스가 좋지 않아서 위험한 것이
+아니라, <strong>좋은 뉴스가 많지만 주가도 그만큼 빠르게 흔들리는
+종목</strong>입니다. 그래서 최근 뉴스 분석의 결론은 “무조건 강하게
+추격”이 아니라 <strong>좋은 뉴스는 인정하되 분할 접근이
+맞다</strong>입니다.</p>
+<h3 id="최근-뉴스-종합-판단">최근 뉴스 종합 판단</h3>
+<p>최근 뉴스 흐름을 투자 관점에서 정리하면:</p>
+<ul>
+<li><strong>긍정</strong>: AI 팩토리, 국방 AX, 치지직 트래픽, 크래프톤
+협업</li>
+<li><strong>중립 이상</strong>: 검색·쇼핑 서비스 신뢰도 강화</li>
+<li><strong>경계</strong>: 대규모 투자비, 테마성 급등락, 기대 선반영
+변동성</li>
+</ul>
+<p>결국 최근 뉴스는 NAVER의 중장기 스토리를 강화하고 있습니다. 다만
+뉴스만 보면 흥분하기 쉬운 자리이므로, <strong>뉴스는 매수 근거가 될 수
+있지만 추격매수 근거가 되면 안 된다</strong>는 점까지 같이 봐야
+합니다.</p>
+<h2 id="기술적-분석">3. 기술적 분석</h2>
+<p>기술적으로는 <code>관망</code>보다 <code>매수</code>에 더 가까운
+그림입니다.</p>
+<ul>
+<li>5일선: <strong>246,800원</strong></li>
+<li>20일선: <strong>227,770원</strong></li>
+<li>60일선: <strong>216,015원</strong></li>
+<li>120일선: <strong>231,562원</strong></li>
+<li>RSI: <strong>61.00</strong></li>
+<li>MACD: <strong>10,056</strong></li>
+<li>MACD 시그널: <strong>9,735</strong></li>
+<li>볼린저 상단: <strong>289,769원</strong></li>
+<li>볼린저 하단: <strong>165,771원</strong></li>
+</ul>
+<p>핵심은 세 가지입니다.</p>
+<p>첫째, <strong>주가가 5일선 위를 회복했고 20일선, 60일선보다도
+높습니다.</strong> 단기 반등이 아니라 중기 추세 복원으로 볼 수 있는
+자리입니다.</p>
+<p>둘째, <strong>MACD가 양수권에서 시그널 위를 유지</strong>하고
+있습니다. 급락 뒤 재반등이 아니라, 이미 추세 전환이 진행된 상태에서 다시
+탄력이 붙는 흐름으로 읽힙니다.</p>
+<p>셋째, <strong>RSI 61은 과열권이 아닙니다.</strong> 강한 반등이
+나왔지만 아직 70을 넘지 않았기 때문에, 기술적으로는 “너무 늦었다”기보다
+“추세가 붙기 시작했다”는 해석이 더 타당합니다.</p>
+<figure>
+<img
+src="../assets/2026-06-12-naver-035420-analysis/naver_price_technical.png"
+alt="NAVER 주가와 기술적 지표" />
+<figcaption aria-hidden="true">NAVER 주가와 기술적 지표</figcaption>
+</figure>
+<h3 id="obv-해석">OBV 해석</h3>
+<p>OBV도 긍정적입니다.</p>
+<ul>
+<li><code>2026-06-11</code> OBV: <strong>40,774,924</strong></li>
+<li><code>2026-06-12</code> OBV: <strong>45,990,808</strong></li>
+<li><code>2026-06-12</code> OBV 20일 평균:
+<strong>30,731,583</strong></li>
+</ul>
+<p>즉 6월 12일에는 <strong>가격 상승과 거래량 증가가 동시에 나타나며
+OBV가 재상승</strong>했습니다. 가격만 튄 것이 아니라 <strong>실제 거래
+에너지가 붙은 상승</strong>으로 보는 것이 맞습니다. OBV가 20일 평균을
+크게 웃도는 점도 긍정적입니다.</p>
+<h2 id="기본적-분석">4. 기본적 분석</h2>
+<p>펀더멘털은 NAVER의 가장 강한 방어 논리입니다.</p>
+<p>일간 밸류에이션 기준으로 <code>2026-06-12</code> NAVER는:</p>
+<ul>
+<li>PER <strong>18.99배</strong></li>
+<li>PBR <strong>1.34배</strong></li>
+<li>ROE <strong>7.06%</strong></li>
+<li>EPS <strong>13,009원</strong></li>
+<li>BPS <strong>184,396원</strong></li>
+</ul>
+<p>고성장 플랫폼주 프리미엄을 완전히 잃은 값도 아니고, 그렇다고 과열
+멀티플도 아닙니다. 지금 NAVER는 <strong>“비싸서 못 사는 종목”이 아니라
+“실적과 성장 기대를 감안하면 다시 볼 수 있는 종목”</strong> 쪽에 더
+가깝습니다.</p>
+<p>연간 흐름도 나쁘지 않습니다.</p>
+<ul>
+<li><p>2023년 EPS: <strong>6,180원</strong></p></li>
+<li><p>2024년 EPS: <strong>11,913원</strong></p></li>
+<li><p>2025년 EPS: <strong>12,376원</strong></p></li>
+<li><p>2026년 EPS 추정: <strong>12,382원</strong></p></li>
+<li><p>2024년 PBR: <strong>1.16배</strong></p></li>
+<li><p>2025년 PBR: <strong>1.32배</strong></p></li>
+<li><p>2026년 PBR: <strong>1.13배</strong></p></li>
+</ul>
+<p>AI 재무제표 요약(<code>2026-03-31</code> 기준)도 방향은 같습니다.</p>
+<ul>
+<li>2021년 매출: <strong>68,176억 원</strong></li>
+<li>2022년 매출: <strong>82,201억 원</strong></li>
+<li>2023년 매출: <strong>96,706억 원</strong></li>
+<li>2025년 영업현금흐름: <strong>30,958억 원</strong></li>
+</ul>
+<p>요약하면 NAVER는:</p>
+<ul>
+<li>매출이 꾸준히 성장하고 있고</li>
+<li>영업이익률이 <code>15~19%</code> 수준으로 안정적이며</li>
+<li>영업현금흐름이 커지고 있어</li>
+<li>AI, 클라우드, 콘텐츠 투자 여력이 있습니다</li>
+</ul>
+<p>즉 NAVER의 강점은 “스토리만 있는 종목”이 아니라 <strong>실제로 현금이
+도는 대형 플랫폼</strong>이라는 점입니다.</p>
+<figure>
+<img
+src="../assets/2026-06-12-naver-035420-analysis/naver_fundamentals.png"
+alt="NAVER 실적과 밸류에이션" />
+<figcaption aria-hidden="true">NAVER 실적과 밸류에이션</figcaption>
+</figure>
+<h2 id="수급-분석">5. 수급 분석</h2>
+<p>이번 글에서 가장 중요한 구간입니다. 6월 12일 수급은 <strong>명백히
+긍정적</strong>이었습니다.</p>
+<h3 id="투자자별-매매">투자자별 매매</h3>
+<p><code>2026-06-12</code> 하루 기준:</p>
+<ul>
+<li>개인: <strong>-1,381,414주</strong></li>
+<li>외국인: <strong>+651,931주</strong></li>
+<li>기관: <strong>+750,508주</strong></li>
+<li>연기금: <strong>+175,274주</strong></li>
+</ul>
+<p>개인이 강하게 매도한 물량을 <strong>외국인과 기관이 동시에
+흡수</strong>했습니다. 이런 구조는 대형주에서 의미가 큽니다. 특히
+연기금까지 플러스로 들어왔다는 점은 <strong>단기 투기성 수급보다 더 질
+좋은 수급</strong>으로 해석할 수 있습니다.</p>
+<h3 id="공매도">공매도</h3>
+<p>최근 공매도 비율은 여전히 높게 흔들립니다.</p>
+<ul>
+<li>2026-06-10: <strong>11.76%</strong></li>
+<li>2026-06-11: <strong>10.87%</strong></li>
+<li>2026-06-12: <strong>3.83%</strong></li>
+</ul>
+<p>6월 10~11일에는 공매도 비율이 높았지만, 6월 12일에는 <strong>3%대까지
+급락</strong>했습니다. 이는 주가 급등 구간에서 공매도 압력이 완화됐다는
+뜻으로 읽을 수 있습니다. 아직 절대적으로 낮다고 보긴 어렵지만,
+<strong>최소한 당일 흐름은 숏 우위가 아니라 롱
+우위</strong>였습니다.</p>
+<h3 id="프로그램-매매">프로그램 매매</h3>
+<p>프로그램 매매도 6월 12일에는 확실히 좋았습니다.</p>
+<ul>
+<li>프로그램 매수: <strong>1,961,552주</strong></li>
+<li>프로그램 매도: <strong>773,038주</strong></li>
+<li>프로그램 순매수 누적: <strong>1,188,514주</strong></li>
+<li>프로그램 순매수 증감: <strong>1,327,926주</strong></li>
+</ul>
+<p>하루 수치로 보면 프로그램 자금이 강하게 유입된 날입니다. NAVER 같은
+대형주에서 이 정도 프로그램 순매수는 단기 수급 개선 신호로 충분히 해석할
+수 있습니다.</p>
+<h3 id="신용거래">신용거래</h3>
+<p>신용거래는 체크가 필요합니다.</p>
+<ul>
+<li>2026-06-01 잔고율: <strong>1.92%</strong></li>
+<li>2026-06-09 잔고율: <strong>2.55%</strong></li>
+<li>2026-06-11 잔고율: <strong>2.33%</strong></li>
+</ul>
+<p>신용잔고는 6월 초 급등 과정에서 빠르게 늘었습니다. 이건 분명한
+부담입니다. 다만 6월 11일 기준으로는 <strong>2.55%에서 2.33%로 다소
+낮아졌고</strong>, 신규 대비 상환도 병행되고 있습니다. 즉 신용이 완전히
+해소된 구간은 아니지만, <strong>과열이 더 심해지는 방향은 잠시 멈춘
+상태</strong>입니다.</p>
+<p>제 해석은 이렇습니다.</p>
+<ul>
+<li>긍정: 외국인·기관·프로그램이 동시에 매수</li>
+<li>중립: 공매도 압력은 12일 기준 완화</li>
+<li>경계: 신용잔고는 아직 높아 단기 변동성 요인</li>
+</ul>
+<p>그래서 수급 종합 평가는 <strong>강한 긍정이지만, 레버리지성 매수는
+경계</strong>입니다.</p>
+<figure>
+<img
+src="../assets/2026-06-12-naver-035420-analysis/naver_supply_demand.png"
+alt="NAVER 수급 차트" />
+<figcaption aria-hidden="true">NAVER 수급 차트</figcaption>
+</figure>
+<h3 id="국민연금-보유-추이">국민연금 보유 추이</h3>
+<p>국민연금 보유비중은 최근 공시 기준으로:</p>
+<ul>
+<li><code>2024-03-11</code>: <strong>8.23%</strong></li>
+<li><code>2025-03-13</code>: <strong>9.24%</strong></li>
+</ul>
+<p>최근 1년 기준으로는 <strong>국민연금 보유비중이 다시 높아진
+상태</strong>입니다. 단기 트레이딩 데이터는 아니지만, 장기 기관투자자
+관점에서 NAVER를 다시 더 많이 보유하고 있다는 점은 중장기 신뢰 신호로
+해석할 수 있습니다.</p>
+<h2 id="종합-투자-의견">6. 종합 투자 의견</h2>
+<p>제 의견은 분명하게 <strong><code>매수</code></strong> 입니다.</p>
+<p>다만 표현을 더 정확히 하면:</p>
+<ul>
+<li><strong>종목 의견</strong>: 매수</li>
+<li><strong>실행 방식</strong>: 분할 매수</li>
+<li><strong>추격매수 강도</strong>: 보통</li>
+</ul>
+<p>이렇게 정리하는 것이 맞습니다.</p>
+<h3 id="왜-매수인가">왜 매수인가</h3>
+<ul>
+<li>실적과 현금흐름이 받쳐 주는 대형 플랫폼입니다.</li>
+<li>PER 18.99배, PBR 1.34배는 NAVER의 체력을 감안하면 과도한 가격이
+아닙니다.</li>
+<li>6월 12일에는 외국인·기관·연기금·프로그램 수급이 동시에
+개선됐습니다.</li>
+<li>RSI 61, MACD 양수, OBV 상승으로 기술적 흐름도 살아 있습니다.</li>
+<li>국민연금 보유비중도 최근 공시 기준 <code>9.24%</code>로 나쁘지
+않습니다.</li>
+</ul>
+<h3 id="왜-강력매수가-아닌가">왜 강력매수가 아닌가</h3>
+<ul>
+<li>최근 주가 변동폭이 매우 큽니다.</li>
+<li>신용잔고율이 2%를 넘는 구간이라 단기 흔들림이 나올 수 있습니다.</li>
+<li>6월 8일~12일 구간은 급등락이 반복된 자리라 추격 매수는 체감 난도가
+높습니다.</li>
+</ul>
+<p>즉 NAVER는 <strong>좋은 종목이고 지금도 매수 의견이 맞지만, 한 번에
+세게 베팅하는 자리까지는 아니다</strong>라는 판단입니다.</p>
+<h2 id="체크포인트">7. 체크포인트</h2>
+<p>앞으로는 아래를 보시면 됩니다.</p>
+<ul>
+<li>외국인·기관 동반 순매수가 이어지는지</li>
+<li>공매도 비율이 다시 10% 안팎으로 올라오는지</li>
+<li>신용잔고율이 2.3%대에서 더 높아지는지</li>
+<li>20일선 위에서 주가가 안착하는지</li>
+<li>OBV가 다시 꺾이는지, 아니면 추가 상승하는지</li>
+</ul>
+<h2 id="최종-정리">최종 정리</h2>
+<p><code>2026년 6월 12일</code> 기준 NAVER는 <strong>매수
+의견</strong>이 타당합니다.<br />
+재무가 버티고, 기술적 지표가 살아 있고, 수급도 실제로
+들어왔습니다.<br />
+특히 <strong>외국인·기관 동반 순매수 + 프로그램 순매수 + OBV
+상승</strong> 조합은 무시하기 어렵습니다.</p>
+<p>다만 단기 변동성이 큰 종목이므로, 가장 좋은 전략은 <strong>분할
+매수로 접근하는 적극적 매수</strong>입니다.<br />
+제 판단은 명확합니다. <strong>지금 NAVER는 관망보다 매수가 더 맞는
+자리</strong>입니다.</p>
+<blockquote>
+<p>⚠️ 본 글은 정보 제공 및 학습용 콘텐츠이며 투자 권유가 아닙니다. 최종
+투자 판단과 책임은 투자자 본인에게 있습니다.</p>
+</blockquote>
+</body>
+</html>

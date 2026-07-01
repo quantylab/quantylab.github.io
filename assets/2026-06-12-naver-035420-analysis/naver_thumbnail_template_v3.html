@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Thumbnail</title>
+    <style>
+      :root {
+        --bg: #edf3ef;
+        --panel: #fbfdfb;
+        --panel-soft: #f5f8f5;
+        --border: #dbe8dd;
+
+        --text: #101815;
+        --muted: #607067;
+        --muted-2: #8a9990;
+
+        --brand: #e53935;
+        --brand-soft: #fff0ef;
+
+        --buy: #e53935;
+        --sell: #2563eb;
+        --hold: #17211d;
+
+        --shadow: 0 28px 80px rgba(21, 38, 29, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: var(--bg);
+        font-family:
+          "Noto Sans CJK KR",
+          "Noto Sans KR",
+          "Apple SD Gothic Neo",
+          sans-serif;
+      }
+
+      body {
+        padding: 34px;
+      }
+
+      .frame {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 38px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 10% 12%, rgba(229, 57, 53, 0.12), transparent 30%),
+          radial-gradient(circle at 92% 18%, rgba(37, 99, 235, 0.12), transparent 28%),
+          linear-gradient(135deg, #f7faf7 0%, #eaf2ed 100%);
+        border: 1px solid rgba(215, 231, 219, 0.9);
+      }
+
+      .frame::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(16, 24, 21, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(16, 24, 21, 0.04) 1px, transparent 1px);
+        background-size: 44px 44px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 78%);
+      }
+
+      .card {
+        position: absolute;
+        inset: 30px;
+        padding: 34px 50px 34px;
+        border-radius: 32px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(251, 253, 251, 0.98)),
+          var(--panel);
+        border: 1px solid rgba(219, 232, 221, 0.95);
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        right: -120px;
+        bottom: -170px;
+        width: 520px;
+        height: 520px;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(229, 57, 53, 0.11), transparent 68%);
+        pointer-events: none;
+      }
+
+      .header {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .brand-caption {
+        color: var(--muted-2);
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+      }
+
+      .logo-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 62px;
+      }
+
+      .logo {
+        max-width: 340px;
+        max-height: 72px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding-top: 34px;
+      }
+
+      .meta-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 220px 250px;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .info-card,
+      .date-card,
+      .opinion-card {
+        min-height: 92px;
+        border-radius: 24px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.78);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .info-card,
+      .date-card {
+        padding: 16px 24px;
+      }
+
+      .opinion-card {
+        padding: 16px 24px;
+        align-items: center;
+        text-align: center;
+      }
+
+      .meta-label {
+        color: var(--muted-2);
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 7px;
+      }
+
+      .stock-line,
+      .date-line {
+        color: var(--text);
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
+      }
+
+      .date-line {
+        font-size: 27px;
+      }
+
+      .opinion-label {
+        color: var(--muted);
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 4px;
+      }
+
+      .opinion-value {
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+
+      .opinion-value.buy {
+        color: var(--buy);
+      }
+
+      .opinion-value.sell {
+        color: var(--sell);
+      }
+
+      .opinion-value.hold {
+        color: var(--hold);
+      }
+
+      .title-wrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 34px 0 18px;
+      }
+
+      .title {
+        margin: 0;
+        color: var(--text);
+        font-size: 66px;
+        font-weight: 900;
+        line-height: 1.12;
+        letter-spacing: -0.045em;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+        max-width: 1030px;
+      }
+
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(219, 232, 221, 0.9);
+        color: var(--muted-2);
+        font-size: 21px;
+        font-weight: 700;
+      }
+
+      .footer strong {
+        color: var(--text);
+        font-weight: 900;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="frame">
+      <section class="card" id="thumbnail">
+        <header class="header">
+          <div class="brand-caption">QUANTYLAB AI STOCK ANALYSIS</div>
+          <div class="logo-wrap">
+            <img class="logo" id="logo" alt="company logo" />
+          </div>
+        </header>
+
+        <main class="content">
+          <div class="meta-row">
+            <div class="info-card">
+              <div class="meta-label">분석 종목</div>
+              <div class="stock-line" id="stockLine"></div>
+            </div>
+
+            <div class="date-card">
+              <div class="meta-label">날짜</div>
+              <div class="date-line" id="dateLine"></div>
+            </div>
+
+            <div class="opinion-card">
+              <div class="opinion-label" id="opinionLabel"></div>
+              <div class="opinion-value" id="opinionValue"></div>
+            </div>
+          </div>
+
+          <div class="title-wrap">
+            <h1 class="title" id="title"></h1>
+          </div>
+        </main>
+
+        <footer class="footer">
+          <span><strong>Quantylab AI</strong></span>
+          <span>실제 금융·시장 데이터 기반 종목 분석</span>
+        </footer>
+      </section>
+    </div>
+
+    <script>
+      const data = {"analysisLabel":"AI 종목 분석","stockDisplay":"NAVER(035420)","date":"2026-06-12","opinionLabel":"의견","opinion":"매수","title":"6월 급등 이후에도 매수 의견을 유지하는 이유","logoSrc":"file:///home/quantylab/quantylab-blog/src/assets/2026-06-12-naver-035420-analysis/naver_logo_green.png"};
+
+      const $ = (id) => document.getElementById(id);
+
+      const opinionClass = (opinion) => {
+        if (opinion === "매수") return "buy";
+        if (opinion === "매도") return "sell";
+        return "hold";
+      };
+
+      const fitText = (element, minSize = 20) => {
+        const parent = element.parentElement;
+        let size = Number.parseFloat(getComputedStyle(element).fontSize);
+
+        while (
+          size > minSize &&
+          (element.scrollWidth > parent.clientWidth ||
+            element.scrollHeight > parent.clientHeight)
+        ) {
+          size -= 1;
+          element.style.fontSize = `${size}px`;
+        }
+      };
+
+      const logo = $("logo");
+      if (data.logoSrc) {
+        logo.src = data.logoSrc;
+      }
+
+      $("stockLine").textContent = data.stockDisplay || "";
+      $("dateLine").textContent = data.date || "";
+      $("opinionLabel").textContent = data.opinionLabel || "투자의견";
+
+      const opinionValue = $("opinionValue");
+      opinionValue.textContent = data.opinion || "중립";
+      opinionValue.classList.add(opinionClass(data.opinion));
+
+      $("title").textContent = data.title || "";
+
+      requestAnimationFrame(() => {
+        fitText($("stockLine"), 22);
+        fitText($("dateLine"), 20);
+        fitText($("title"), 40);
+      });
+    </script>
+  </body>
+</html>
